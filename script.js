@@ -68,3 +68,19 @@ economyMinus.addEventListener('click', () => {
     }
     economyUpdater(-1);
 });
+
+//---- confirmation section
+let confirmationDialog = document.querySelector(".confirmation");
+let confirmationClose = document.querySelector(".confirm-close");
+bookNow.addEventListener('click', () => {
+    confirmationDialog.classList.add("confirmation-active");
+    document.getElementById("confirm-first-class").innerText = firstClassInput.value;
+    document.getElementById("confirm-economy").innerText = economyInput.value;
+    document.getElementById("confirm-subtotal").innerText = subtotalAmount.innerText;
+    document.getElementById("confirm-vat").innerText = vatAmount.innerText;
+    document.getElementById("confirm-total").innerText = totalAmount.innerText;
+});
+
+confirmationClose.addEventListener('click', () => {
+    confirmationDialog.classList.remove("confirmation-active");
+});
